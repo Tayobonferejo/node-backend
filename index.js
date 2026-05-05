@@ -23,3 +23,9 @@ const  currentOS = {
 }
 
 console.log(currentOS); 
+
+console.log(require("path").sep);
+
+const {readFileSync} = require("fs");
+
+const fs = require("fs");
