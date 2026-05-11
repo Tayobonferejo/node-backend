@@ -1,34 +1,8 @@
-// const _ = require("lodash")
+var http = require("http")
+var fs = require("fs")
 
-// const items = [2, [3, [4, [5]]]];
-
-// const newItems = _.flattenDeep(items);
-// console.log(newItems);
-// console.log("hello people")
-
-// const {readFile } = require("fs")
-
-// console.log("started a first task")
-
-// readFile("./subfolder/test.txt", "utf8", (err, result) => {
-//     if (err) {
-//         console.log(err)
-//         return
-//     }
-
-//     console.log(result)
-//     console.log("completed first task")
-// })
-
-// console.log("starting next task");
-
-const EventEmitter = require("events");
-const { EventEmitter } = require("stream");
-
-const customEmitter = new EventEmitter();
-
-customEmitter.on("response", () => {
-    console.log("data recieved")
+const server = http.createServer(function(request, response) {
+    const text = fs.readFileSync("./content/test.txt", "utf8")
+    response.end(text)
 })
-
-customEmitter.emit("reponse");
+server.listen(5000);
