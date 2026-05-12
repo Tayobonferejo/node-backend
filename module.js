@@ -1,8 +1,9 @@
-var http = require("http")
+const http = require("http")
 var fs = require("fs")
 
 const server = http.createServer(function(request, response) {
-    const text = fs.readFileSync("./content/test.txt", "utf8")
-    response.end(text)
+    response.writeHead,(200, {"content-type":"text/plain"})
+    response.write(`<h2>home page</h2>`);
+    response.end();
 })
 server.listen(5000);
