@@ -3,9 +3,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Master programming by recreating your favorite technologies from scratch.",
-  "main": "index.js",
+  "main": "nodemon express.js",
   "scripts": {
-    "start": "nodemon module.js"
+    "start": "nodemon express.js"
   },
   "author": "",
   "license": "ISC",
