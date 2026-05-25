@@ -8,15 +8,15 @@ app.get("/", (request,response) => {
     response.send(`<h2>Home Page </h2><a href="/api/products">product</a>`)
 })
 
-// app.get("/api/products",(request,response) => {
-//     // const newProducts = products.map((product) => {
-//     //     const {id, name, image} = product;
-//     //     return{id, name, image};
-//     // })
+app.get("/api/products",(request,response) => {
+    // const newProducts = products.map((product) => {
+    //     const {id, name, image} = product;
+    //     return{id, name, image};
+    // })
 
-//     const singleProduct = products.find((product) => product.id === 4)
-//     response.json(singleProduct); 
-// })
+    const singleProduct = products.find((product) => product.id === 4)
+    response.json(singleProduct); 
+})
 
 app.get("api/products/productID/reviews/:reviewID", (request, response) => {
     console.log(request.params)
