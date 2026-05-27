@@ -5,6 +5,7 @@ const { request } = require("http");
 
 app.use(express.static("./methods-public"))
 
+app.use(express.urlencoded({extended: false}))
 
 app.get("/api/people",(request,response) => {
     response.status(200).json({success:true,data:people})
