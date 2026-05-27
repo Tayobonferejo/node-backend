@@ -1,23 +1,17 @@
 const express = require("express");
-const path = require("path");
 const app = express();
 const {products } = require("./data");
 const { request } = require("http");
 
+app.use(express.static("./methods-public"))
 
-const logger = (request, response, next) => {
-    const method = request.method;
-    const url = request.url;
-    const time = new Date().getFullYear();
-    console.log(method, url, time);
-    next();
-}
-app.get("/",logger , (request,response) => {
 
-    response.send(`<h2>Home Page </h2><a href="/api/products">product</a>`);
+app.get("/api/people",(request,response) => {
+    response.status(200).json({success:true,data:people})
 })
-app.get("/about" , logger, (request, response) => {
-    response.send("about")
+
+app.post("/login",(request,response) => {
+  response.send("POST")
 })
 
 app.listen(5000, () => {
